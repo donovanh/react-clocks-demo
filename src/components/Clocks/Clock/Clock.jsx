@@ -53,6 +53,8 @@ export default function Clock({ zone }) {
     const updatedClocks = clocks.filter((clock) => clock.zone !== zone);
     setTimeout(() => {
       setClocks(updatedClocks);
+      // Also update localStorage
+      localStorage.setItem("timezones", JSON.stringify(updatedClocks));
     }, 300);
   };
 
