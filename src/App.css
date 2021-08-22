@@ -1,0 +1,25 @@
+body {
+  background-color: #282c34;
+  color: white;
+}
+
+header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

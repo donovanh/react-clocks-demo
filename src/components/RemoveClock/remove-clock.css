@@ -1,0 +1,29 @@
+.remove-clock {
+  position: absolute;
+  top: 1.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+@media screen and (max-width: 800px) {
+  .remove-clock {
+    top: 0;
+    right: 0;
+    opacity: 0.5 !important;
+  }
+}
+
+.clock-wrapper:hover .remove-clock {
+  opacity: 0.5;
+}
+
+.clock-wrapper:hover .remove-clock:hover {
+  opacity: 1;
+}

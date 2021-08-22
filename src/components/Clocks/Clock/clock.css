@@ -1,0 +1,114 @@
+.clock-wrapper {
+  position: relative;
+}
+
+.clock {
+  position: relative;
+  height: auto;
+  animation: zoomIn 1s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+  transform-origin: 50%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1100px) {
+  .clock {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .clock {
+    width: 175px;
+  }
+}
+
+.clock svg {
+  max-height: 100vh;
+}
+
+.spin-in {
+  animation: spinIn 2s cubic-bezier(0, 1, 0.5, 1) forwards,
+    fadeIn 0.5s ease-out forwards;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.spin-in.hour {
+  animation-delay: 0.3s, 0;
+}
+
+.spin-in.minute {
+  animation-delay: 0.15s, 0;
+}
+
+.spin-in.second {
+  animation-delay: 0, 0;
+}
+
+.hand {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hand-wrapper {
+  position: absolute;
+  transform: scale(2);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.number {
+  animation: fadeIn 0.5s linear forwards;
+  transform-origin: 75%;
+  opacity: 0;
+}
+
+.clock-title {
+  text-align: center;
+  padding: 0 0 1rem;
+}
+
+.removing {
+  animation: zoomOut 300ms ease-in forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinIn {
+  0% {
+    transform: rotateZ(-20deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
