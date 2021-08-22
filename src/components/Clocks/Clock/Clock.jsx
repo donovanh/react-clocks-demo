@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { findTimeZone, getZonedTime } from "timezone-support";
 import { ClockContext } from "../../../context/clock-context";
 import RemoveClock from "../../RemoveClock";
 import { Face, Hour, Minute, Second } from "./parts";
@@ -8,17 +7,11 @@ import "./clock.css";
 
 function calculateAngles(zone) {
   const localDate = new Date();
-  const timeZone = findTimeZone(zone);
-  const zonedDate = getZonedTime(localDate, timeZone);
-  const date = new Date(
-    zonedDate.year,
-    zonedDate.month,
-    zonedDate.day,
-    zonedDate.hours,
-    zonedDate.minutes,
-    zonedDate.seconds,
-    zonedDate.milliseconds
-  );
+  const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  let zonedDate = localDate.toLocaleString("en", {
+    timeZone: zone,
+  });
+  const date = new Date(zonedDate);
   const seconds = date.getSeconds();
   const minutes = date.getMinutes();
   const hours = date.getHours();

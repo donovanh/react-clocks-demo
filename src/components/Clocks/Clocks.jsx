@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ClockContext } from "../../context/clock-context";
 import Clock from "./Clock";
-import AddClock from "../AddClock";
 
 import "./clocks.css";
 
