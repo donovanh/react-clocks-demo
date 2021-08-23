@@ -10,6 +10,7 @@ import "./App.css";
  * Passing props
  * Shared state
  * Context API
+ * API Calls with React Query
  * Reducers
  * Redux Toolkit
  * Testing React components using react-testing-library
@@ -24,7 +25,7 @@ export default function App() {
   return (
     <ClockContextProvider>
       <header>
-        <h1>The Time Zone</h1>
+        <h1>World Clocks</h1>
         <section className="add-clock">
           <AddClock />
         </section>
